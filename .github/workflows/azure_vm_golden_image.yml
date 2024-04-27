@@ -25,5 +25,8 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
+    - name: Install azure plugin for packer
+      run: packer plugins install github.com/hashicorp/azure
+
     - name: Build Golden Image
       run: packer build azure-image.json
