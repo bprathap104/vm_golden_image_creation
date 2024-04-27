@@ -1,0 +1,25 @@
+{
+  "builders": [
+    {
+      "type": "azure-arm",
+      "use_azure_cli_auth": true,
+      "managed_image_resource_group_name": "myResourceGroup",
+      "managed_image_name": "myGoldenImage",
+      "os_type": "Linux",
+      "image_publisher": "Canonical",
+      "image_offer": "UbuntuServer",
+      "image_sku": "18.04-LTS",
+      "location": "westus",
+      "vm_size": "Standard_D2s_v3"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "shell",
+      "inline": [
+        "sudo apt-get update",
+        "sudo apt-get install -y nginx"
+      ]
+    }
+  ]
+}
