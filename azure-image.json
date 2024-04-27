@@ -3,8 +3,8 @@
     {
       "type": "azure-arm",
       "use_azure_cli_auth": true,
-      "managed_image_resource_group_name": "1-9ea34a7d-playground-sandbox",
-      "build_resource_group_name": "1-9ea34a7d-playground-sandbox",
+      "managed_image_resource_group_name": "{{env `RESOURCE_GROUP`}}",
+      "build_resource_group_name": "{{env `RESOURCE_GROUP`}}",
       "managed_image_name": "myGoldenImage",
       "os_type": "Linux",
       "image_publisher": "Canonical",
