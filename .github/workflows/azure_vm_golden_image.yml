@@ -29,4 +29,5 @@ jobs:
       run: packer plugins install github.com/hashicorp/azure
 
     - name: Build Golden Image
-      run: packer build azure-image.json
+      run: packer build azure-image.pkr.hcl
+
