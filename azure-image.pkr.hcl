@@ -5,13 +5,18 @@ variable "resource_group" {
 source "azure-arm" "golden-image" {
   use_azure_cli_auth = true
 
-  managed_image_resource_group_name = var.resource_group
-
-  managed_image_name = "myGoldenImage"
-  os_type            = "Linux"
-  image_publisher    = "Canonical"
-  image_offer        = "UbuntuServer"
-  image_sku          = "18.04-LTS"
+  image_sku                         = "22_04-lts"
+  location                          = "West US"
+  shared_image_gallery_destination {
+    resource_group       = var.resource_group
+    gallery_name         = "Test"
+    image_name           = "test-ubuntu-20.04"
+    image_version        = "1.0.0"
+    storage_account_type = "Standard_LRS"
+  }
+  os_type                           = "Linux"
+  image_offer                       = "0001-com-ubuntu-server-jammy"
+  image_publisher                   = "canonical"
   vm_size            = "Standard_D2s_v3"
 }
 
