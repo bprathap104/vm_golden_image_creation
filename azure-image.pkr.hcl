@@ -1,8 +1,8 @@
 source "azure-arm" "golden-image" {
   use_azure_cli_auth = true
 
-  managed_image_resource_group_name = "${env("RESOURCE_GROUP")}"
-  build_resource_group_name         = "${env("RESOURCE_GROUP")}"
+  managed_image_resource_group_name = "{{env `RESOURCE_GROUP`}}"
+  build_resource_group_name         = "{{env `RESOURCE_GROUP`}}"
 
   managed_image_name = "myGoldenImage"
   os_type            = "Linux"
