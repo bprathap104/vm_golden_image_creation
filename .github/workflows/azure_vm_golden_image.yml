@@ -31,4 +31,4 @@ jobs:
     - name: Build Golden Image
       run: packer build azure-image.pkr.hcl
       env:
-        RESOURCE_GROUP: "${{ env.RESOURCE_GROUP }}"
+        RESOURCE_GROUP: ${{ secrets.RESOURCE_GROUP }}
